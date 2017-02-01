@@ -4,11 +4,27 @@
 1) List the execution time of the weblog aggregation query for Hive,
 SparkSQL, and SparkSQL on Parquet.
 
-Hive: ```Time taken: 111.783 seconds, Fetched: 50 row(s)```
+Hive:
+```
+Time taken: 111.783 seconds, Fetched: 50 row(s)
+Time taken: 98.927 seconds, Fetched: 50 row(s)
+```
 
-SparkSQL: ```Time taken: 27.922 seconds, Fetched 50 row(s)```
+SparkSQL:
+```
+Time taken: 27.922 seconds, Fetched 50 row(s)
+Time taken: 9.804 seconds, Fetched 50 row(s)
+Time taken: 6.622 seconds, Fetched 50 row(s)
+Time taken: 5.754 seconds, Fetched 50 row(s)
+```
 
-SparkSQL on Parquet: ```Time taken: 9.604 seconds, Fetched 50 row(s)```
+SparkSQL on Parquet:
+```
+Time taken: 9.604 seconds, Fetched 50 row(s)
+Time taken: 5.684 seconds, Fetched 50 row(s)
+Time taken: 4.992 seconds, Fetched 50 row(s)
+Time taken: 5.43 seconds, Fetched 50 row(s)
+```
 
 2) How many jobs does Hive launch? Does SparkSQL launch jobs?
 
