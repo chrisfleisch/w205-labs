@@ -16,7 +16,7 @@ tail -n +2 ${DATA_FILE_PATH}hvbp_hcahps_05_28_2015.csv > ${DATA_FILE_RENAMED_PAT
 tail -n +2 ${DATA_FILE_PATH}Measure\ Dates.csv > ${DATA_FILE_RENAMED_PATH}measures.csv
 tail -n +2 ${DATA_FILE_PATH}Readmissions\ and\ Deaths\ -\ Hospital.csv > ${DATA_FILE_RENAMED_PATH}readmissions.csv
 tail -n +2 ${DATA_FILE_PATH}Timely\ and\ Effective\ Care\ -\ Hospital.csv > ${DATA_FILE_RENAMED_PATH}effective_care.csv
-tail -n +2 ${DATA_FILE_PATH}HCAHPS - Hospital.csv > ${DATA_FILE_RENAMED_PATH}hospital_survey.csv
+tail -n +2 ${DATA_FILE_PATH}HCAHPS\ -\ Hospital.csv > ${DATA_FILE_RENAMED_PATH}hospital_survey.csv
 
 # make directories for files hdfs
 echo "Making directories in HDFS..."
