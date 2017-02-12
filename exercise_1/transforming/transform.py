@@ -6,7 +6,7 @@ sqlContext = HiveContext(sc)
 
 
 # Setup table for my hospitals
-sqlContext.sql("DROP TABLE my_hospitals")
+sqlContext.sql("DROP TABLE IF EXISTS my_hospitals")
 
 sql = """
 CREATE TABLE my_hospitals AS
@@ -19,7 +19,7 @@ sqlContext.sql(sql)
 
 
 # Setup table for my_star_ratings
-sql = """DROP TABLE my_star_ratings"""
+sql = """DROP TABLE IF EXISTS my_star_ratings"""
 sqlContext.sql(sql)
 
 sql = """
@@ -35,7 +35,7 @@ FROM hospital_survey
 sqlContext.sql(sql)
 
 # create a table for survey scores
-sql = """DROP TABLE my_survey_scores"""
+sql = """DROP TABLE IF EXISTS my_survey_scores"""
 sqlContext.sql(sql)
 
 sql = """
@@ -51,11 +51,8 @@ sqlContext.sql(sql)
 
 
 # setup table for my_care
-sql = """
-DROP TABLE my_care
-"""
+sql = """DROP TABLE IF EXISTS my_care"""
 sqlContext.sql(sql)
-
 
 sql = """
 CREATE TABLE my_care AS
@@ -71,9 +68,7 @@ sqlContext.sql(sql)
 
 
 # setup table for my_infections
-sql = """
-DROP TABLE my_infections
-"""
+sql = """DROP TABLE IF EXISTS my_infections"""
 sqlContext.sql(sql)
 
 sql = """
@@ -90,7 +85,7 @@ sqlContext.sql(sql)
 
 
 # setup table for my_readmissions
-sql = """DROP TABLE my_readmissions"""
+sql = """DROP TABLE IF EXISTS my_readmissions"""
 sqlContext.sql(sql)
 
 sql = """
@@ -107,7 +102,7 @@ sqlContext.sql(sql)
 
 
 # setup table for my_complications
-sql = """DROP TABLE my_complications"""
+sql = """DROP TABLE IF EXISTS my_complications"""
 sqlContext.sql(sql)
 
 sql = """
@@ -123,4 +118,7 @@ FROM complications
 sqlContext.sql(sql)
 
 # display new tables
-
+df = sqlContext.sql("show tables")
+df.registerTempTable('temp_tables')
+query = """SELECT * FROM temp_tables WHERE tableName LIKE '%my%'"""
+sqlContext.sql(query).show()
