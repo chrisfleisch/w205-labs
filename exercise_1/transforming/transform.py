@@ -1,4 +1,7 @@
+from pyspark import SparkContext
 from pyspark.sql import HiveContext
+
+sc = SparkContext("local")
 sqlContext = HiveContext(sc)
 
 
@@ -118,3 +121,6 @@ cast(to_date(from_unixtime(unix_timestamp(measure_end_date, 'MM/dd/yy'))) as dat
 FROM complications
 """
 sqlContext.sql(sql)
+
+# display new tables
+
