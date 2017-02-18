@@ -16,7 +16,6 @@ tail -n +2 ${DATA_FILE_PATH}hvbp_hcahps_05_28_2015.csv > ${DATA_FILE_RENAMED_PAT
 tail -n +2 ${DATA_FILE_PATH}Measure\ Dates.csv > ${DATA_FILE_RENAMED_PATH}measures.csv
 tail -n +2 ${DATA_FILE_PATH}Readmissions\ and\ Deaths\ -\ Hospital.csv > ${DATA_FILE_RENAMED_PATH}readmissions.csv
 tail -n +2 ${DATA_FILE_PATH}Timely\ and\ Effective\ Care\ -\ Hospital.csv > ${DATA_FILE_RENAMED_PATH}effective_care.csv
-tail -n +2 ${DATA_FILE_PATH}HCAHPS\ -\ Hospital.csv > ${DATA_FILE_RENAMED_PATH}hospital_survey.csv
 
 # make directories for files hdfs
 echo "Making directories in HDFS..."
@@ -28,7 +27,6 @@ hdfs dfs -mkdir -p ${HDFS_BASE_PATH}/surveys_responses
 hdfs dfs -mkdir -p ${HDFS_BASE_PATH}/measures
 hdfs dfs -mkdir -p ${HDFS_BASE_PATH}/readmissions
 hdfs dfs -mkdir -p ${HDFS_BASE_PATH}/effective_care
-hdfs dfs -mkdir -p ${HDFS_BASE_PATH}/hospital_survey
 
 # put the files hdfs
 echo "Moving files into HDFS..."
@@ -39,4 +37,3 @@ hdfs dfs -put -f ${DATA_FILE_RENAMED_PATH}surveys_responses.csv ${HDFS_BASE_PATH
 hdfs dfs -put -f ${DATA_FILE_RENAMED_PATH}measures.csv ${HDFS_BASE_PATH}/measures
 hdfs dfs -put -f ${DATA_FILE_RENAMED_PATH}readmissions.csv ${HDFS_BASE_PATH}/readmissions
 hdfs dfs -put -f ${DATA_FILE_RENAMED_PATH}effective_care.csv ${HDFS_BASE_PATH}/effective_care
-hdfs dfs -put -f ${DATA_FILE_RENAMED_PATH}hospital_survey.csv ${HDFS_BASE_PATH}/hospital_survey

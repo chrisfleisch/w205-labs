@@ -19,4 +19,4 @@ $ spark-submit hospital_variability.py
 +-------------------+--------------------+-----------+-----------+------------------+
 ```
 
-Using the same table of measures as before, I grouped the data by measure_id and found the standard deviation for each measure rate. This shows use the variabliity of each procedure.
+Using the same table of measures as before, I grouped the data by measure\_id and found the standard deviation for each measure rate. This shows use the variability of each procedure.

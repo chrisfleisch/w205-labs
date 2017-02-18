@@ -42,37 +42,6 @@ WITH SERDEPROPERTIES (
 STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare/complications';
 
-DROP TABLE hospital_survey;
-CREATE EXTERNAL TABLE hospital_survey (
-provider_id STRING,
-hospital_name STRING,
-address STRING,
-city STRING,
-state STRING,
-zip_code STRING,
-county_name STRING,
-phone_number STRING,
-hcahps_measure_id STRING,
-hcahps_question STRING,
-hcahps_answer_description STRING,
-patient_survey_star_rating STRING,
-patient_survey_star_rating_footnote STRING,
-hcahps_answer_percent STRING,
-hcahps_answer_percent_footnote STRING,
-number_of_completed_surveys STRING,
-number_of_completed_surveys_footnote STRING,
-survey_response_rate_percent STRING,
-survey_response_rate_percent_footnote STRING,
-measure_start_date STRING,
-measure_end_date STRING
-)
-ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
-WITH SERDEPROPERTIES (
-  "separatorChar" = ",", "quoteChar" = '"', "escapeChar" = '\\'
-)
-STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare/hospital_survey';
-
 DROP TABLE infections;
 CREATE EXTERNAL TABLE infections (
 provider_id STRING,

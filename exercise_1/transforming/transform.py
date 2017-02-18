@@ -20,22 +20,6 @@ FROM hospitals
 sqlContext.sql(sql)
 
 
-# Setup table for my_star_ratings
-sql = """DROP TABLE IF EXISTS my_star_ratings"""
-sqlContext.sql(sql)
-
-sql = """
-CREATE TABLE my_star_ratings AS
-SELECT
-provider_id, hcahps_measure_id measure_id,
-hcahps_question question, hcahps_answer_description answer,
-cast(patient_survey_star_rating AS INT) star_rating,
-cast(to_date(from_unixtime(unix_timestamp(measure_start_date, 'MM/dd/yy'))) as date) measure_start,
-cast(to_date(from_unixtime(unix_timestamp(measure_end_date, 'MM/dd/yy'))) as date) measure_end
-FROM hospital_survey
-"""
-sqlContext.sql(sql)
-
 # create a table for survey scores
 sql = """DROP TABLE IF EXISTS my_survey_scores"""
 sqlContext.sql(sql)

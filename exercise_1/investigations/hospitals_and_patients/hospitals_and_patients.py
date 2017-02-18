@@ -23,5 +23,5 @@ quality_corr = df.stat.corr('avg_score', 'survey_score')
 var_corr = df.stat.corr('std_dev', 'survey_score')
 
 
-print 'Correlation between average hostpital quality rates and survey scores: ', quality_corr
-print 'Correlation between standard deviations of procedure rates and survey scores: ', var_corr
+print 'Correlation between average hospital quality rates and survey scores: ', quality_corr
+print 'Correlation between standard deviations of hospital procedure rates and survey scores: ', var_corr
