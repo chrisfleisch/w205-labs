@@ -19,4 +19,4 @@ $ spark-submit best_states.py
 +-----+-----------+-----------+------------------+
 ```
 
-The same hospital measures where used to find the states with the highest quality of care. This time I grouped the rates together by state and took the average.
+The same hospital measures where used to find the states with the highest quality of care. This time I grouped the rates together by state and took the average. The states with the highest scores on average are listed here.
