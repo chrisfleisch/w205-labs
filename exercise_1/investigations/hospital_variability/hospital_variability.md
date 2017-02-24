@@ -3,20 +3,20 @@ Which procedures have the greatest variability between hospitals?
 ```
 $ spark-submit hospital_variability.py
 
-+-------------------+--------------------+-----------+-----------+------------------+
-|         measure_id|        measure_name|  avg_score|  sum_score|           std_dev|
-+-------------------+--------------------+-----------+-----------+------------------+
-|          HAI_2_SIR|Catheter-Associat...|48.30051912|224887.2170| 49.45932191841454|
-|              AMI_2|Aspirin prescribe...|46.76739691|217749.0000|49.334403774660466|
-|          HAI_1_SIR|Central line-asso...|42.76890163|199132.0060| 49.26597269849545|
-|              VTE_4|Unfractionated he...|43.39819588|202062.0000| 49.17729021645856|
-|          HAI_3_SIR|Surgical Site Inf...|43.31772380|201687.3220| 49.14184522159113|
-|             AMI_10| Statin at Discharge|45.86168385|213532.0000| 48.86002194975948|
-|              STK_2|Discharged on Ant...|56.60674399|263561.0000| 48.84487628252045|
-|PSI_14_POSTOP_DEHIS|A wound that spli...|54.71919029|254772.5500|48.829550373292854|
-|          HAI_5_SIR|Methicillin-resis...|40.52777857|188697.3370|48.726715857075924|
-|              STK_5|Antithrombotic Th...|56.16967354|261526.0000| 48.50840425178849|
-+-------------------+--------------------+-----------+-----------+------------------+
++----------------+--------------------+-----------+-----------+------------------+
+|      measure_id|        measure_name|  avg_score|  sum_score|           std_dev|
++----------------+--------------------+-----------+-----------+------------------+
+|           STK_4|Thrombolytic Therapy|15.56164089| 72455.0000|21.954194561164023|
+|           OP_23|     Head CT results|15.56263683| 63978.0000|21.844653491103774|
+|          AMI_7a|Fibrinolytic Ther...| 0.03134796|   150.0000|  18.7794213613377|
+|            OP_2|Fibrinolytic Ther...| 1.16200438|  4777.0000|18.048443797995763|
+|IMM_3_FAC_ADHPCT|Healthcare worker...|80.68061252|295049.0000|16.348047889323595|
+|           VTE_5|Warfarin therapy ...|47.11361684|219361.0000| 16.30300466996529|
+|           VTE_1|Venous thromboemb...|67.63960481|314930.0000|15.257401142298388|
+|           STK_8|    Stroke Education|46.12542955|214760.0000|14.013262732452308|
+|           CAC_3|Home Management P...|84.11764706|  8580.0000| 12.71912110433212|
+|           IMM_2|Immunization for ...|71.79573043|343040.0000|11.944885922069522|
++----------------+--------------------+-----------+-----------+------------------+
 ```
 
-Using the same table of measures as before, I grouped the data by measure\_id and found the standard deviation for each measure rate. This shows use the variability of each procedure. The procedures with the highest variability are listed here.
+Using the same table of combined measures as before, I grouped the data by measure\_id and found the standard deviation for each measure rate using the original scores. The original scores where used so that my transformed scores that converted NA values to zero do not affect the variability. This shows us the variability of each procedure. The procedures with the highest variability are listed here.
