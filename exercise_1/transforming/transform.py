@@ -103,18 +103,18 @@ FROM complications
 """
 sqlContext.sql(sql)
 
-################################################################
-# combine all the procedures into one table and transform scores 
-################################################################
+#####################################################################
+# combine some of the procedures into one table and transform scores
+#####################################################################
 
 # get data from my_care, ignore the values with times
 sql = """
 SELECT provider_id, measure_name,
 measure_id, score
-FROM my_care 
-WHERE measure_id != 'ED_1b' AND measure_id != 'ED_2b' 
+FROM my_care
+WHERE measure_id != 'ED_1b' AND measure_id != 'ED_2b'
 AND measure_id != 'EDV' AND measure_id != 'OP_1'
-AND measure_id != 'OP_18b' AND measure_id != 'OP_20' AND measure_id != 'OP_21' 
+AND measure_id != 'OP_18b' AND measure_id != 'OP_20' AND measure_id != 'OP_21'
 AND measure_id != 'OP_3b' AND measure_id != 'OP_5'
 """
 care_df = sqlContext.sql(sql)
@@ -123,13 +123,13 @@ care_df = sqlContext.sql(sql)
 care_df = care_df.withColumn('new_score', care_df.score)
 
 # convert measure_id = 'OP_22' OR measure_id = 'PC_01' OR measure_id = 'VTE_6' to 100 - new_score
-care_df = care_df.withColumn('new_score', 
+care_df = care_df.withColumn('new_score',
                          func.when(care_df.measure_id == 'OP_22', 100 - care_df.new_score). \
                          otherwise(care_df.new_score))
-care_df = care_df.withColumn('new_score', 
+care_df = care_df.withColumn('new_score',
                              func.when(care_df.measure_id == 'PC_01', 100 - care_df.new_score). \
                              otherwise(care_df.new_score))
-care_df = care_df.withColumn('new_score', 
+care_df = care_df.withColumn('new_score',
                              func.when(care_df.measure_id == 'VTE_6', 100 - care_df.new_score).
                              otherwise(care_df.new_score))
 
