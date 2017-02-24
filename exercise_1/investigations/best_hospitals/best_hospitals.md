@@ -25,7 +25,7 @@ The data from effective care was filtered so that only measures with rates were 
 
 All the measures from readmissions and deaths was used and converted to rates so that higher was better.
 
-For complications, the death counts were filtered out and scores were converted so that higher rates are better.
+For complications, the death counts were filtered out, because the data dictionary did not provide enough information about this measure or how it should be evaluated. The scores were converted so that higher rates are better.
 
 The infection data was filtered to only use the Standardized Infections Ratios (SIR) scores. The SIR was used, because it provided an overall rate for infections for a particular measure. All the rates were converted so that higher is better.
 
