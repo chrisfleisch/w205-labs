@@ -19,16 +19,16 @@ $ spark-submit best_hospitals.py
 +-----------+-----------+---------+------------------+--------------------+------------------+-----+
 ```
 
-In order to calculate scores for the best hospitals I looked at a variety of procedures or measures. The data from effective care, readmissions and deaths, complications, and infections was combined into one table to make calculations easier and allows transformations to performed.
+In order to calculate scores for the best hospitals I looked at a variety of procedures or measures. The data from effective care, readmissions and deaths, complications, and infections was combined into one table to make calculations easier and allows transformations to be performed.
 
-The data from effective care was filtered so that only measures with rates were used. Measures with times or other types of scores was removed. It was not clear from the data dictionary what a good time would be for those measures or how they should be evaluated. For most measures higher rates are better. For some of the measures lower was better. In which case the scores where converted so that higher was better. I used the data dictionary and exploration of the data to determine how each score should be treated.
+The data from effective care was filtered so that only measures with rates were used. Measures with times or other types of scores was removed. It was not clear from the data dictionary what a good time would be for those measures or how they should be evaluated. For most measures higher rates are better. For some of the measures lower was better -- in these cases the scores where converted so that higher was better. I used the data dictionary and exploration of the data to determine how each score should be treated.
 
 All the measures from readmissions and deaths was used and converted to rates so that higher was better.
 
 For complications, the death counts were filtered out and scores were converted so that higher rates are better.
 
-The infection data was filtered to only us the Standardized Infections Ratios (SIR) scores. The SIR was used, because it provided an overall rate for infections for a particular measure. All the rates were converted so that higher is better.
+The infection data was filtered to only use the Standardized Infections Ratios (SIR) scores. The SIR was used, because it provided an overall rate for infections for a particular measure. All the rates were converted so that higher is better.
 
-Once all the scores were in the same format (higher is better) they could be summed or averaged over much easier giving us a more uniform score for each measure. NA values for scores were converted to zeros so that hospitals that didn’t provide any data would have a much lower score that those that did.
+Once all the scores were in the same format (higher is better) they could be summed or averaged over much easier giving us a more uniform score for each measure. NA values for scores were converted to zeros so that hospitals that provided less data would see a negative impact on their overall quality score.
 
 I was than able to group by the provider and average the rates to get a final score. The hospitals with the highest average score are listed here.
