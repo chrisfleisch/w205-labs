@@ -14,6 +14,9 @@ class ParseTweet(Bolt):
     def process(self, tup):
         tweet = tup.values[0]  # extract the tweet
 
+        # convert to lower case
+        tweet = tweet.lower()
+
         # Split the tweet into words
         words = tweet.split()
 
@@ -35,7 +38,10 @@ class ParseTweet(Bolt):
 
             # Strip leading and lagging punctuations
             aword = word.strip("\"?><,'.:;)")
-
+            
+            # Remove non word characters from beginning and ends
+            aword = re.sub(r"^[\W_]+|[\W_]+$", '', aword)
+            
             # now check if the word contains only ascii
             if len(aword) > 0 and ascii_string(word):
                 valid_words.append([aword])

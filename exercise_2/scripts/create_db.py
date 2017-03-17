@@ -10,10 +10,10 @@ if __name__ == '__main__':
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
     try:
         cur = conn.cursor()
-        cur.execute("CREATE DATABASE Tcount")
+        cur.execute("CREATE DATABASE tcount")
         cur.close()
         conn.close()
     except:
         raise
-        print("Could not create Tcount")
+        print("Could not create tcount")
 
