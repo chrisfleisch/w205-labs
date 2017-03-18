@@ -29,7 +29,7 @@ The strings are a lot longer and there are thousands of them. Calculating the di
 ### Submission 7:
 
 |      | |1 |2|3|4|5|6|7|8|9|10|
-|------|
+|------|-|--|-|-|-|-|-|-|-|-|--|
 |      | |  |G|U|M|B|A|R|R|E|L |
 |**1** | |0 |1|2|3|4|5|6|7|8|9 |
 |**2** |G|1 |0|1|2|3|4|5|6|7|8 |
