@@ -14,11 +14,13 @@ These additional python libraries are required for this to run:
 - psycopg2
 - tweepy
 
-Please see the readme.md for full setup and running instructions.
+Please see the `readme.md` for full setup and running instructions.
 
 #### File structure:
 ```
 .
+├── Architecture.md
+├── Architecture.pdf
 ├── Plot.png
 ├── extweetwordcount
 │   ├── README.md
@@ -41,7 +43,6 @@ Please see the readme.md for full setup and running instructions.
 ├── readme.md
 ├── requirements.txt
 ├── scratch
-│   ├── Architecture.md
 │   ├── exploration.ipynb
 │   └── top-20.csv
 ├── screenshots
@@ -56,4 +57,4 @@ Please see the readme.md for full setup and running instructions.
     └── histogram.py
 ```
 
-The python requirements can be installed with the `requirements.txt` file. The storm application is located in the `extweetwordcount` directory. The topology is located in the `extweetwordcount/topologies/` directory. The `parse.py` and `wordcount.py` bolts are located in `/extweetwordcount/src/bolts/` and the spout `tweets.py` is located in `/extweetwordcount/src/spouts/`. The database creation scripts are in the `scripts` folder along with the output python scripts. See readme.md for further instructions.
+The python requirements can be installed with the `requirements.txt` file. The storm application is located in the `extweetwordcount` directory. The topology is located in the `extweetwordcount/topologies/` directory. The `parse.py` and `wordcount.py` bolts are located in `/extweetwordcount/src/bolts/` and the spout `tweets.py` is located in `/extweetwordcount/src/spouts/`. The database creation scripts are in the `scripts` folder along with the output python scripts. See `readme.md` for further instructions.
