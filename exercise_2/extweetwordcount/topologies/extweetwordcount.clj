@@ -9,7 +9,7 @@
           options
           "spouts.tweets.Tweets"
           ["tweet"]
-          :p 3 
+          :p 1 
           )
     }
     ;; bolt configuration
