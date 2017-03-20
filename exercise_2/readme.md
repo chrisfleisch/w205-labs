@@ -1,4 +1,10 @@
 ## Setup
+1. Clone code repo:
+```git clone git@github.com:chrisfleisch/w205-labs.git```
+
+1. Move to exercise 2 dir:
+```cd w205-labs/exercise_2```
+
 1. Using python 2.7.3 install requirements:
 
  ```pip install -r requirements.txt```
