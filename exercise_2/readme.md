@@ -1,9 +1,9 @@
 ## Setup
-1. Change to w205 user:
+  1. Change to w205 user:
 
-  `su w205`
+    `su w2 05`
 
-1. Clone code repo:
+  1. Clone code repo:
 
   `git clone https://github.com/chrisfleisch/w205-labs.git`
 
