@@ -1,18 +1,22 @@
 ## Setup
 
-  1. Change to w205 user:
+1. Change to w205 user:
 
-  `su w205`
+  ```
+  su w205
+  ```
 
-  1. Clone code repo:
+2. Clone code repo:
 
-  `git clone https://github.com/chrisfleisch/w205-labs.git`
+  ```
+  git clone https://github.com/chrisfleisch/w205-labs.git
+  ```
 
-1. Move to exercise 2 dir:
+3. Move to exercise 2 dir:
 
  `cd w205-labs/exercise_2`
 
-1. Switch back to root, using python 2.7.3 install requirements, then switch back to w205:
+4. Switch back to root, using python 2.7.3 install requirements, then switch back to w205:
 
  `exit`
 
@@ -22,15 +26,17 @@
 
  `su w205`
 
-1. Create database:
+5. Create database:
 
  `cd scripts`
 
  `python create_db.py`
 
-1. Create table:
+6. Create table:
 
- `python create_table.py`
+ ```
+ python create_table.py
+ ```
 
 ## Get streaming
 
