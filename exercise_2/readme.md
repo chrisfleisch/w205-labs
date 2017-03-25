@@ -1,11 +1,11 @@
 ## Setup
 1. Change to w205 user:
 
-  ```su w205```
+  `su w205`
 
 1. Clone code repo:
 
-  ```git clone https://github.com/chrisfleisch/w205-labs.git```
+  `git clone https://github.com/chrisfleisch/w205-labs.git`
 
 1. Move to exercise 2 dir:
 
