@@ -1,7 +1,7 @@
 ## Setup
   1. Change to w205 user:
 
-    `su w2 05`
+  `su w205`
 
   1. Clone code repo:
 
