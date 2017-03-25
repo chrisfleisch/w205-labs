@@ -14,23 +14,25 @@
 
 3. Move to exercise 2 dir:
 
- `cd w205-labs/exercise_2`
+ ```
+ cd w205-labs/exercise_2
+ ```
 
 4. Switch back to root, using python 2.7.3 install requirements, then switch back to w205:
 
- `exit`
-
- `cd w205-labs/exercise_2`
-
- `pip install -r requirements.txt`
-
- `su w205`
+ ```
+ exit
+ cd w205-labs/exercise_2
+ pip install -r requirements.txt
+ su w205
+ ```
 
 5. Create database:
 
- `cd scripts`
-
- `python create_db.py`
+ ```
+ cd scripts
+ python create_db.py
+ ```
 
 6. Create table:
 
@@ -40,17 +42,19 @@
 
 ## Get streaming
 
- 1. Input your twitter credentials at the top of tweets.py:
+1. Input your twitter credentials at the top of tweets.py:
 
- `cd ../`
+ ```
+ cd ../
+ vim extweetwordcount/src/spouts/tweets.py
+ ```
 
- `vim extweetwordcount/src/spouts/tweets.py`
+2. Run the stream
 
- 1. Run the stream
-
- `cd extweetwordcount`
-
- `sparse run`
+ ```
+ cd extweetwordcount
+ sparse run
+ ```
 
  When you have enough data, hit Contol-C to stop the stream
 
@@ -58,14 +62,19 @@
 
 1. Move to scripts directory:
 
- `cd ../scripts`
+ ```
+ cd ../scripts
+ ```
 
-1. Final results:
+2. Final results:
 
- `python finalresults.py`
+ ```
+ python finalresults.py
+ python finalresults.py hello
+ ```
 
- `python finalresults.py hello`
+3. Histogram:
 
-1. Histogram:
-
- `python histogram.py 10,12`
+ ```
+ python histogram.py 10,12
+ ```
