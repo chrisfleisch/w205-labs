@@ -1,6 +1,6 @@
 #### Application Idea
 
-The idea of this application is to stream data or tweets from Twitter, parse the tweets into words, and count the number of unique words. The word and count data is saved in a postgresql database as long as the stream application is running. This allows us to run queries against the database as the data is incoming.
+The idea of this application is to stream data or tweets from Twitter, parse the tweets into words, and count the number of unique words. The word and count data is saved in a postgresql database. This allows us to run queries against the database as the data is incoming or later after the stream has stopped. If the stream starts again the word counts will be updated and counts will continue where they left off.
 
 #### Architecture description
 
