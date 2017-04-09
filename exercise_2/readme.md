@@ -27,7 +27,7 @@
  su w205
  ```
 
-5. Create database:
+5. Create database (may take a little while to complete):
 
  ```
  cd scripts
